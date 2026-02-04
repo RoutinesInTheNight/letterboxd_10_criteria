@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Горизонтальный блок</title>
     <link href="styles.css" rel="stylesheet" />
+    <script src="telegram-web-app.js"></script>
 </head>
 
 <body>
@@ -14,136 +15,146 @@
         <span id="stars">0 / 5</span>
     </div>
 
+
+    <div class="categories">
+        <div class="category">
+            <span class="title">1. Сценарий и идея</span>
+            <span class="description">Насколько сама история, идея и её реализация кажутся осмысленными и
+                интересными.</span>
+            <div class="points">
+                <div onclick="points(1, 0)" class="select"></div>
+                <div onclick="points(1, 1)"></div>
+                <div onclick="points(1, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">2. Структура и ритм</span>
+            <span class="description">Насколько фильм держит внимание и не провисает по ходу просмотра.</span>
+            <div class="points">
+                <div onclick="points(2, 0)" class="select"></div>
+                <div onclick="points(2, 1)"></div>
+                <div onclick="points(2, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">3. Персонажи</span>
+            <span class="description">Насколько персонажи живые, понятные и вызывают интерес</span>
+            <div class="points">
+                <div onclick="points(3, 0)" class="select"></div>
+                <div onclick="points(3, 1)"></div>
+                <div onclick="points(3, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">4. Актёрская игра</span>
+            <span class="description">Насколько убедительно актёры воплощают своих персонажей</span>
+            <div class="points">
+                <div onclick="points(4, 0)" class="select"></div>
+                <div onclick="points(4, 1)"></div>
+                <div onclick="points(4, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">5. Режиссура</span>
+            <span class="description">Насколько чувствуется авторский подход и уверенное управление фильмом</span>
+            <div class="points">
+                <div onclick="points(5, 0)" class="select"></div>
+                <div onclick="points(5, 1)"></div>
+                <div onclick="points(5, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">6. Монтаж и темп</span>
+            <span class="description">Насколько комфортно и естественно фильм ощущается по ритму</span>
+            <div class="points">
+                <div onclick="points(6, 0)" class="select"></div>
+                <div onclick="points(6, 1)"></div>
+                <div onclick="points(6, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">7. Визуал</span>
+            <span class="description">Насколько приятно и выразительно фильм выглядит визуально</span>
+            <div class="points">
+                <div onclick="points(7, 0)" class="select"></div>
+                <div onclick="points(7, 1)"></div>
+                <div onclick="points(7, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">8. Музыка и звук</span>
+            <span class="description">Насколько звук и музыка усиливают сцены и общее восприятие</span>
+            <div class="points">
+                <div onclick="points(8, 0)" class="select"></div>
+                <div onclick="points(8, 1)"></div>
+                <div onclick="points(8, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">9. Атмосфера</span>
+            <span class="description">Насколько фильм создаёт цельное настроение и погружает в свой мир</span>
+            <div class="points">
+                <div onclick="points(9, 0)" class="select"></div>
+                <div onclick="points(9, 1)"></div>
+                <div onclick="points(9, 2)"></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <span class="title">10. Эмоц. след</span>
+            <span class="description">Насколько сильно фильм эмоционально задел и запомнился после просмотра</span>
+            <div class="points">
+                <div onclick="points(10, 0)" class="select"></div>
+                <div onclick="points(10, 1)"></div>
+                <div onclick="points(10, 2)"></div>
+            </div>
+        </div>
+
+    </div>
+
+
     <div class="bottom">
-        <span id="copy-ru">Копир ру</span>
-        <span id="copy-en">Копир англ</span>
+
+        <div style="margin-right: auto;">
+            <svg viewBox="0 0 640 640">
+                <path
+                    d="M320 128C263.2 128 212.1 152.7 176.9 192L224 192C241.7 192 256 206.3 256 224C256 241.7 241.7 256 224 256L96 256C78.3 256 64 241.7 64 224L64 96C64 78.3 78.3 64 96 64C113.7 64 128 78.3 128 96L128 150.7C174.9 97.6 243.5 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C233 576 156.1 532.6 109.9 466.3C99.8 451.8 103.3 431.9 117.8 421.7C132.3 411.5 152.2 415.1 162.4 429.6C197.2 479.4 254.8 511.9 320 511.9C426 511.9 512 425.9 512 319.9C512 213.9 426 128 320 128z" />
+            </svg>
+            <span>Сброс</span>
+        </div>
+
+        <div id="copy-ru">
+            <svg viewBox="0 0 640 640">
+                <path
+                    d="M480 400L288 400C279.2 400 272 392.8 272 384L272 128C272 119.2 279.2 112 288 112L421.5 112C425.7 112 429.8 113.7 432.8 116.7L491.3 175.2C494.3 178.2 496 182.3 496 186.5L496 384C496 392.8 488.8 400 480 400zM288 448L480 448C515.3 448 544 419.3 544 384L544 186.5C544 169.5 537.3 153.2 525.3 141.2L466.7 82.7C454.7 70.7 438.5 64 421.5 64L288 64C252.7 64 224 92.7 224 128L224 384C224 419.3 252.7 448 288 448zM160 192C124.7 192 96 220.7 96 256L96 512C96 547.3 124.7 576 160 576L352 576C387.3 576 416 547.3 416 512L416 496L368 496L368 512C368 520.8 360.8 528 352 528L160 528C151.2 528 144 520.8 144 512L144 256C144 247.2 151.2 240 160 240L176 240L176 192L160 192z" />
+            </svg>
+            <span>RU</span>
+        </div>
+
+        <div id="copy-en">
+            <svg viewBox="0 0 640 640">
+                <path
+                    d="M480 400L288 400C279.2 400 272 392.8 272 384L272 128C272 119.2 279.2 112 288 112L421.5 112C425.7 112 429.8 113.7 432.8 116.7L491.3 175.2C494.3 178.2 496 182.3 496 186.5L496 384C496 392.8 488.8 400 480 400zM288 448L480 448C515.3 448 544 419.3 544 384L544 186.5C544 169.5 537.3 153.2 525.3 141.2L466.7 82.7C454.7 70.7 438.5 64 421.5 64L288 64C252.7 64 224 92.7 224 128L224 384C224 419.3 252.7 448 288 448zM160 192C124.7 192 96 220.7 96 256L96 512C96 547.3 124.7 576 160 576L352 576C387.3 576 416 547.3 416 512L416 496L368 496L368 512C368 520.8 360.8 528 352 528L160 528C151.2 528 144 520.8 144 512L144 256C144 247.2 151.2 240 160 240L176 240L176 192L160 192z" />
+            </svg>
+            <span>EN</span>
+        </div>
+
     </div>
 
 
 
 
 
-    <div class="title">
-        <span>1. Сценарий и идея</span>
-    </div>
-    <div class="desc">
-        <span>Насколько сама история, идея и её реализация кажутся осмысленными и интересными</span>
-    </div>
-    <div class="points">
-        <div onclick="points(1, 0)"></div>
-        <div onclick="points(1, 1)"></div>
-        <div onclick="points(1, 2)"></div>
-    </div>
-
-    <div class="title">
-        <span>2. Структура и ритм</span>
-    </div>
-    <div class="desc">
-        <span>Насколько фильм держит внимание и не провисает по ходу просмотра</span>
-    </div>
-    <div class="points">
-        <div onclick="points(2, 0)"></div>
-        <div onclick="points(2, 1)"></div>
-        <div onclick="points(2, 2)"></div>
-    </div>
 
 
-    <div class="title">
-        <span>3. Персонажи</span>
-    </div>
-    <div class="desc">
-        <span>Насколько персонажи живые, понятные и вызывают интерес</span>
-    </div>
-    <div class="points">
-        <div onclick="points(3, 0)"></div>
-        <div onclick="points(3, 1)"></div>
-        <div onclick="points(3, 2)"></div>
-    </div>
-
-    <div class="title">
-        <span>4. Актёрская игра</span>
-    </div>
-    <div class="desc">
-        <span>Насколько убедительно актёры воплощают своих персонажей</span>
-    </div>
-    <div class="points">
-        <div onclick="points(4, 0)"></div>
-        <div onclick="points(4, 1)"></div>
-        <div onclick="points(4, 2)"></div>
-    </div>
-
-    <div class="title">
-        <span>5. Режиссура</span>
-    </div>
-    <div class="desc">
-        <span>Насколько чувствуется авторский подход и уверенное управление фильмом</span>
-    </div>
-    <div class="points">
-        <div onclick="points(5, 0)"></div>
-        <div onclick="points(5, 1)"></div>
-        <div onclick="points(5, 2)"></div>
-    </div>
-
-    <div class="title">
-        <span>6. Монтаж и темп</span>
-    </div>
-    <div class="desc">
-        <span>Насколько комфортно и естественно фильм ощущается по ритму</span>
-    </div>
-    <div class="points">
-        <div onclick="points(6, 0)"></div>
-        <div onclick="points(6, 1)"></div>
-        <div onclick="points(6, 2)"></div>
-    </div>
-
-    <div class="title">
-        <span>7. Визуал</span>
-    </div>
-    <div class="desc">
-        <span>Насколько приятно и выразительно фильм выглядит визуально</span>
-    </div>
-    <div class="points">
-        <div onclick="points(7, 0)"></div>
-        <div onclick="points(7, 1)"></div>
-        <div onclick="points(7, 2)"></div>
-    </div>
-
-    <div class="title">
-        <span>8. Музыка и звук</span>
-    </div>
-    <div class="desc">
-        <span>Насколько звук и музыка усиливают сцены и общее восприятие</span>
-    </div>
-    <div class="points">
-        <div onclick="points(8, 0)"></div>
-        <div onclick="points(8, 1)"></div>
-        <div onclick="points(8, 2)"></div>
-    </div>
-
-    <div class="title">
-        <span>9. Атмосфера</span>
-    </div>
-    <div class="desc">
-        <span>Насколько фильм создаёт цельное настроение и погружает в свой мир</span>
-    </div>
-    <div class="points">
-        <div onclick="points(9, 0)"></div>
-        <div onclick="points(9, 1)"></div>
-        <div onclick="points(9, 2)"></div>
-    </div>
-
-    
-    <div class="title">
-        <span>10. Эмоциональный след</span>
-    </div>
-    <div class="desc">
-        <span>Насколько сильно фильм эмоционально задел и запомнился после просмотра</span>
-    </div>
-    <div class="points">
-        <div onclick="points(10, 0)"></div>
-        <div onclick="points(10, 1)"></div>
-        <div onclick="points(10, 2)"></div>
-    </div>
 
 
 
