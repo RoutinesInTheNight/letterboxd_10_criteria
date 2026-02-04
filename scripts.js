@@ -157,7 +157,7 @@ if (telegram.isVersionAtLeast("8.0")) {
 }
 
 
-function hapticFeedback(type, redirectUrl) {
+function hapticFeedback(type) {
   if (telegram.isVersionAtLeast("6.1") && (DEVICE_TYPE === 'android' || DEVICE_TYPE === 'ios')) {
     switch (type) {
       case 'light':
@@ -191,9 +191,6 @@ function hapticFeedback(type, redirectUrl) {
         console.warn('Unknown haptic feedback type:', type);
     }
   }
-  setTimeout(() => {
-    window.location.href = redirectUrl;
-  }, 0);
 }
 
 
