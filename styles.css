@@ -54,7 +54,7 @@ html {
 
 
 body {
-  background-color: #000;
+  background-color: #191C20;
   overflow-x: hidden;
   overscroll-behavior: none;
   height: 100vh;
@@ -135,6 +135,7 @@ html {
 }
 
 .bottom {
+  justify-content: space-around;
   bottom: 0;
   margin: 0 calc(100 / 428 * 8 * var(--vw));
 }
@@ -145,7 +146,8 @@ html {
 .header {
   top: 0;
   justify-content: space-between;
-  background: rgb(170, 187, 204);
+  background: #000;
+  border-bottom: calc(100 / 428 * 2 * var(--vw)) solid #475464;
   box-shadow: 0 0 calc(100 / 428 * 16 * var(--vw)) calc(100 / 428 * 4 * var(--vw)) rgba(0, 0, 0, 1);
   /* clip-path: inset(0 0 calc(-15 * var(--vw)) 0); */
   border-bottom-left-radius: calc(100 / 428 * 16 * var(--vw));
@@ -163,10 +165,10 @@ html {
   display: flex;
   align-items: center;
   gap: calc(100 / 428 * 4 * var(--vw));
-  background: rgb(170, 187, 204);
+  background: #fff;
   padding: calc(100 / 428 * 4 * var(--vw)) calc(100 / 428 * 16 * var(--vw));
   border-radius:  calc(100 / 428 * 16 * var(--vw));
-  color: #15181C;
+  color: #191C20;
   box-shadow: 0 0 calc(100 / 428 * 16 * var(--vw)) calc(100 / 428 * 4 * var(--vw)) rgba(0, 0, 0, 1); */
 }
 
@@ -261,7 +263,7 @@ html {
 .category {
   display: flex;
   flex-direction: column;
-  background: #15181C;
+  background: #475464;
   /* height: calc(100 / 428 * 16 * var(--vw)); */
   padding: calc(100 / 428 * 8 * var(--vw));
   border-radius: calc(100 / 428 * 8 * var(--vw));
