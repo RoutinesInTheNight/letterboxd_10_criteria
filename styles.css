@@ -39,21 +39,55 @@
 
 
 
-body {
+/* body {
   background-color: black;
   overflow-x: hidden;
   overscroll-behavior: none;
   height: 100vh;
   margin: 0 auto;
-  /* background: #20252C; */
-  /* scrollbar-width: none; */
-  /* -ms-overflow-style: none; */
 }
 
 body,
 html {
   background: #20252C;
+} */
+
+
+body {
+  background-color: #20252C;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  height: 100vh;
+  margin: 0 auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  overflow-x: hidden;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* body::-webkit-scrollbar {
   display: none;
 }
