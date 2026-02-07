@@ -2,27 +2,27 @@
 // ====== DATA ======
 
 const categoriesEN = [
-  "Screenplay / Concept",
-  "Structure & Pacing",
+  "Screenplay, concept",
+  "Structure, pacing",
   "Characters",
   "Acting",
   "Directing",
-  "Editing & Rhythm",
+  "Editing, rhythm",
   "Visuals",
-  "Music & Sound",
+  "Music, sound",
   "Atmosphere",
-  "Emotional Impact"
+  "Emotional impact"
 ];
 
 const categoriesRU = [
-  "Сценарий / Идея",
-  "Структура и ритм",
+  "Сценарий, идея",
+  "Структура, ритм",
   "Персонажи",
   "Актёрская игра",
   "Режиссура",
-  "Монтаж и темп",
+  "Монтаж, темп",
   "Визуал",
-  "Музыка и звук",
+  "Музыка, звук",
   "Атмосфера",
   "Эмоциональный след"
 ];
@@ -73,32 +73,34 @@ function pointsToStars(points) {
 
 // ====== COPY ======
 
-function buildText(lang) {
-  const names = lang === "en" ? categoriesEN : categoriesRU;
+function buildText() {
   const total = Object.values(scores).reduce((a, b) => a + b, 0);
   const stars = pointsToStars(total);
 
-  let text = "";
+  let textEN = "";
+  let textRU = "";
 
-  names.forEach((name, i) => {
+  categoriesEN.forEach((name, i) => {
     const value = scores[i + 1];
-    text += `${i + 1}. ${name}: ${value}/2\n`
+    textEN += `${i + 1}. ${name}: ${value}/2\n`;
   });
 
-  text += `\nOverall: ${total}/20 points = ${stars}/5 stars`
+  categoriesRU.forEach((name, i) => {
+    const value = scores[i + 1];
+    textRU += `${i + 1}. ${name}: ${value}/2\n`;
+  });
 
-  return text;
+  textEN += `\nOverall: ${total}/20 points = ${stars}/5 stars`;
+  textRU += `\nИтог: ${total}/20 баллов = ${stars}/5 звёзд`;
+
+  return `${textEN}\n\n----------\n\n${textRU}`;
 }
 
-document.getElementById("copy-en").onclick = () => {
+document.getElementById("copy").onclick = () => {
   hapticFeedback('success');
-  navigator.clipboard.writeText(buildText("en"));
+  navigator.clipboard.writeText(buildText());
 };
 
-document.getElementById("copy-ru").onclick = () => {
-  hapticFeedback('success');
-  navigator.clipboard.writeText(buildText("ru"));
-};
 
 // ====== INIT ======
 updateTotals();
@@ -239,16 +241,14 @@ const SafeAreaManager = (() => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.header');
-  const bottomEl = document.querySelector('.bottom');
-  
-
   SafeAreaManager.onChange = ({ top, bottom }) => {
-    const bottomValue = bottom === 0 ? 'calc(100 / 428 * 16 * var(--vw))' : `${bottom * 2}px`;
-    const topValue = top === 0 ? 'calc(100 / 428 * 16 * var(--vw))' : `${top}px`;
+    const bottomValue = bottom === 0 ? 'calc(100 / 428 * 16 * var(--vw))' : `${bottom}px`;
+    const topValue = top === 0 ? 'calc(100 / 428 * 8 * var(--vw))' : `${top}px`;
 
-    header.style.marginTop = topValue;
-    bottomEl.style.marginBottom = bottomValue;
+    document.querySelector('.header').style.paddingTop = topValue;
+    document.querySelector('.bottom').style.marginBottom = bottomValue;
+    document.querySelector('.categories').style.marginTop = top === 0 ? 'calc(100 / 428 * (37 + 8 + 32) * var(--vw))' : `calc(100 / 428 * (37 + 32) * var(--vw) + ${top}px)`;
+    document.querySelector('.categories').style.marginBottom = top === 0 ? 'calc(100 / 428 * (37 + 16 + 32) * var(--vw))' : `calc(100 / 428 * (37 + 32) * var(--vw) + ${bottom}px)`;
   };
   SafeAreaManager.init();
 });

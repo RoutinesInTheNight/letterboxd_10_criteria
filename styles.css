@@ -54,7 +54,7 @@ html {
 
 
 body {
-  background-color: #20252C;
+  background-color: #000;
   overflow-x: hidden;
   overscroll-behavior: none;
   height: 100vh;
@@ -116,12 +116,12 @@ html {
 
 .header,
 .bottom {
+  position: fixed;
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
   gap: calc(100 / 428 * 8 * var(--vw)); 
   width: calc(100 / 428 * 412 * var(--vw));
-  margin: calc(100 / 428 * 16 * var(--vw)) calc(100 / 428 * 8 * var(--vw)) calc(100 / 428 * 8 * var(--vw)) calc(100 / 428 * 8 * var(--vw));
   font-family: 'Sf Pro Display Bold', Arial, sans-serif;
   font-size: calc(100 / 428 * 24 * var(--vw));
   color: #fff;
@@ -133,12 +133,24 @@ html {
   /* border-bottom-left-radius: calc(100 / 428 * 16 * var(--vw)); */
   /* border-bottom-right-radius: calc(100 / 428 * 16 * var(--vw)); */
 }
+
+.bottom {
+  bottom: 0;
+  margin: 0 calc(100 / 428 * 8 * var(--vw));
+}
+
 /* .bottom {
   bottom: 0
 } */
 .header {
+  top: 0;
   justify-content: space-between;
-  /* gap: 0; */
+  background: rgb(170, 187, 204);
+  box-shadow: 0 0 calc(100 / 428 * 16 * var(--vw)) calc(100 / 428 * 4 * var(--vw)) rgba(0, 0, 0, 1);
+  /* clip-path: inset(0 0 calc(-15 * var(--vw)) 0); */
+  border-bottom-left-radius: calc(100 / 428 * 16 * var(--vw));
+  border-bottom-right-radius: calc(100 / 428 * 16 * var(--vw));
+  padding: 0 calc(100 / 428 * 8 * var(--vw)) calc(100 / 428 * 8 * var(--vw)) calc(100 / 428 * 8 * var(--vw));
 }
 
 .bottom svg {
@@ -155,6 +167,7 @@ html {
   padding: calc(100 / 428 * 4 * var(--vw)) calc(100 / 428 * 16 * var(--vw));
   border-radius:  calc(100 / 428 * 16 * var(--vw));
   color: #15181C;
+  box-shadow: 0 0 calc(100 / 428 * 16 * var(--vw)) calc(100 / 428 * 4 * var(--vw)) rgba(0, 0, 0, 1); */
 }
 
 
